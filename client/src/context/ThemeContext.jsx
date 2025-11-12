@@ -4,11 +4,9 @@ const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
-    // Check localStorage
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) return savedTheme;
 
-    // Check system preference
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       return "dark";
     }
@@ -17,9 +15,13 @@ export const ThemeProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    // Update document class
-    document.documentElement.classList.remove("light", "dark");
-    document.documentElement.classList.add(theme);
+    const root = document.documentElement;
+
+    // Remove both classes first
+    root.classList.remove("light", "dark");
+
+    // Add the current theme class
+    root.classList.add(theme);
 
     // Save to localStorage
     localStorage.setItem("theme", theme);

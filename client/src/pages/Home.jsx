@@ -34,27 +34,28 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-600 to-primary-800 dark:from-primary-800 dark:to-primary-950 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-black opacity-10"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               Welcome to Aerthys Tech
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-primary-100">
+            <p className="text-xl md:text-2xl mb-8 text-blue-100 leading-relaxed">
               Discover the latest electronics and tech gadgets at unbeatable
               prices
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/products"
-                className="inline-flex items-center justify-center px-6 py-3 bg-white text-primary-600 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-all font-semibold text-lg shadow-lg"
               >
                 Shop Now
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link
                 to="/categories"
-                className="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-white text-white rounded-lg hover:bg-white hover:text-primary-600 transition-colors font-semibold"
+                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-600 transition-all font-semibold text-lg"
               >
                 Browse Categories
               </Link>
